@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
+# Keep me in sync with the relevant Github workflow for scheduled builds.
 ARG CADDY_VERSION=2
 FROM caddy:${CADDY_VERSION}-builder AS builder
 
