@@ -17,8 +17,6 @@ on:
 env:
   REGISTRY: docker.io
   IMAGE_NAME: ${{ github.event.repository.name }}
-  # Keep me in sync with Dockerfile
-  CADDY_VERSION: 2
 
 jobs:
   build:
@@ -58,8 +56,6 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
           tags: |
-            type=schedule,pattern=schedule
-            type=schedule,pattern=${{ env.CADDY_VERSION }}
             type=ref,event=branch
             type=ref,event=tag
             type=ref,event=pr
